@@ -1,0 +1,99 @@
+body{
+    font: 14px initial;
+    background-image: url('../imagenesPizzas/black_denim.png');
+}
+
+#wrapper{
+    font: 14px initial;
+}
+
+#encabezado{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background: crimson;
+    padding: 100px 100px 40px 100px;
+}
+
+
+
+#wrapper #contents .formularioLogin {
+    border: 2px solid crimson;
+    border-radius: 16px; 
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    width: 90%;
+    background: darkgrey;
+}
+
+#Login{
+    position: absolute;
+    left: 40%;
+    top: 25%;
+}
+
+.formularioLogin user, .formularioLogin pass{
+    background: buttonface;
+}
+
+.Message{
+    position: absolute;
+    top: 40%;
+    right: 45%;
+    font: 17px cursive; 
+    color: crimson;
+    border-bottom: 2px crimson solid; 
+    text-align: center;
+}
+
+
+/*
+.tabla{
+    position: absolute;
+    top: 50%;
+    right: 45%;
+}*/
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 20%;
+}
+
+/* The Close Button */
+.menuCambiar, 
+.menuRegistro {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.menuCambiar:hover,
+.menuCambiar:focus,
+.menuRegistro:hover,
+.menuRegistro:focus{
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
