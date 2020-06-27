@@ -1,78 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-    <listener>
-        <listener-class>com.sun.xml.ws.transport.http.servlet.WSServletContextListener</listener-class>
-    </listener>
     <servlet>
         <servlet-name>NewServlet</servlet-name>
         <servlet-class>servlets.NewServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>ServicioOrden</servlet-name>
-        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet>
-        <servlet-name>ServicioPago</servlet-name>
-        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet>
-        <servlet-name>ServicioPizza</servlet-name>
-        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet>
-        <servlet-name>ServicioUsuario</servlet-name>
-        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet>
-        <servlet-name>ServicioComplemento</servlet-name>
-        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet>
-        <servlet-name>ServicioIngredientes</servlet-name>
-        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet>
-        <servlet-name>ServicioBebidas</servlet-name>
-        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
     <servlet-mapping>
         <servlet-name>NewServlet</servlet-name>
         <url-pattern>/NewServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServicioOrden</servlet-name>
-        <url-pattern>/ServicioOrden</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServicioPago</servlet-name>
-        <url-pattern>/ServicioPago</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServicioPizza</servlet-name>
-        <url-pattern>/ServicioPizza</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServicioUsuario</servlet-name>
-        <url-pattern>/ServicioUsuario</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServicioComplemento</servlet-name>
-        <url-pattern>/ServicioComplemento</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServicioIngredientes</servlet-name>
-        <url-pattern>/ServicioIngredientes</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServicioBebidas</servlet-name>
-        <url-pattern>/ServicioBebidas</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
