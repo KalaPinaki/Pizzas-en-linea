@@ -62,7 +62,9 @@ public class GestorComplementos {
         complements = collection.find().projection(new Document()).into(new ArrayList<Document>());
 
         for (Document d : complements) {
-            complementos.add(new Document((String) d.get("nombre"), (double) d.get("precio")));
+            complementos.add(new Document().
+                    append("nombre",(String) d.get("nombre")).
+                    append("precio",(double) d.get("precio")));
         }
 
         Document lista = new Document("Lista_Complementos",complementos);
