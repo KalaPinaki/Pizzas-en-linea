@@ -46,14 +46,13 @@ public class ServicioUsuario extends HttpServlet {
                             session.setAttribute("usuario", usuario);
                             session.setMaxInactiveInterval(60 * 10);
 
-                            resultado.append("{\"result\": \"funciona\"}");
-                            System.out.print(resultado);
+                            resultado.append("{\"result\": \"funciona\"");
+                            resultado.append(",\"rol\": \"" + usuario.getBoolean("rol") +"\"}");
                             out.print(resultado);
                         } else {
                             resultado.append("{\"result\": \"no se encontro el usuario\"}");
                             System.out.print(resultado);
                             out.print(resultado);
-
                         }
                     } else {
                         resultado.append("{\"result\": \"rellene los campos solicitados\"}");
