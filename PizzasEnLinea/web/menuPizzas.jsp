@@ -12,48 +12,55 @@
         <meta charset=UTF-8">
         <title>Menú</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/topNavCSS.css" rel="stylesheet" type="text/css"/>
-        <script src="js/tovNavScripts/topNavScript.js" type="text/javascript"></script>
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+        <script src="js/responsive-nav.js" type="text/javascript"></script>
+
     </head>
 
-
     <body>
-        <div id="wrapper">
-            <div id="contents">
+        <div>
+            <div>
+                
                 <header>
-                    <div id="navbar">
-                        <a href="#pizzas">Pizzas</a>
-                        <a href="#bebidas">Bebidas</a>
-                        <a href="#complementos">Complementos</a>
-                        <a href="#carrito">Carrito</a>
-                        <a href="#pagar">Pagar</a>
-                        <a href="#salir">Salir</a>
-                    </div>
-                </header>
+                   
+                    <nav class="nav-collapse">
+                         
+                        <ul>
+                            
+                            <li class="menu-item active"><a href="#pizzas" data-scroll>Pizzas</a></li>
+                            <li class="menu-item"><a href="#bebidas" data-scroll>Bebidas</a></li>
+                            <li class="menu-item"><a href="#complementos" data-scroll>Complementos</a></li>
+                            <li class="menu-item"><a href="#carrito" data-scroll>Carrito</a></li>
+                            <li class="menu-item"><a href="#pagar" data-scroll>Pagar</a></li>
+                            <!--<li class="salir"><a href="#menuPizzas.jsp" data-scroll>Salir</a></li>-->
+                      </ul>
+                    </nav>                                                                                  
+                </header> 
+                
 
                 <section id="pizzas">
-                    <h1>Fixed Nav</h1>
-                    </section>
+                    <h1>PIZZAS</h1>
+                </section>
 
                 <section id="bebidas">
-                    <h1>About</h1>
+                    <h1>BEBIDAS</h1>
                 </section>
 
                 <section id="complementos">
-                    <h1>Projects</h1>
+                    <h1>COMPLEMENTOS</h1>
                 </section>
 
                 <section id="carrito">
-                    <h1>Blog</h1>
+                    <h1>CARRITO</h1>
                 </section>
 
                 <section id="pagar">
-                    <h1>Blog</h1>
+                    <h1>PAGAR</h1>
                 </section>
 
-                <section id="salir">
-                    <h1>Blog</h1>
-                </section>
+                <script src="js/fastclick.js" ></script>
+                <script src="js/scroll.js" ></script>
+                <script src="js/fixed-responsive-nav.js" ></script>
 
             </div>
         </div>
