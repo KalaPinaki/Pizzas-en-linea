@@ -13,7 +13,7 @@
         <title>Menú</title>
         <script src="js/script.js" type="text/javascript"></script>
     </head>
-    <body onload="getSessionName()">
+    <body>
         <div id="wrapper">
             <div id="contents">
                 <section>
