@@ -20,6 +20,10 @@
         <servlet-name>ServicioExtras</servlet-name>
         <servlet-class>servlets.ServicioExtras</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServicioLogOut</servlet-name>
+        <servlet-class>servlets.ServicioLogOut</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServicioUsuario</servlet-name>
         <url-pattern>/ServicioUsuario</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>ServicioExtras</servlet-name>
         <url-pattern>/ServicioExtras</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioLogOut</servlet-name>
+        <url-pattern>/ServicioLogOut</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
