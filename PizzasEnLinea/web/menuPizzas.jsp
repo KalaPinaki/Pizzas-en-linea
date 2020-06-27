@@ -5,13 +5,15 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset=UTF-8">
         <title>Menú</title>
+        <script src="js/script.js" type="text/javascript"></script>
     </head>
-    <body onload="">
+    <body onload="getSessionName()">
         <div id="wrapper">
             <div id="contents">
                 <section>
