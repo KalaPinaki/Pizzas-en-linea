@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
+    <service name="ServicioOrden">
+      <implementation-class>servicios.ServicioOrden</implementation-class>
+    </service>
+    <service name="ServicioComplemento">
+      <implementation-class>servicios.ServicioComplemento</implementation-class>
+    </service>
+    <service name="ServicioBebidas">
+      <implementation-class>servicios.ServicioBebidas</implementation-class>
+    </service>
+    <service name="ServicioPago">
+      <implementation-class>servicios.ServicioPago</implementation-class>
+    </service>
+    <service name="ServicioIngredientes">
+      <implementation-class>servicios.ServicioIngredientes</implementation-class>
+    </service>
+    <service name="ServicioPizza">
+      <implementation-class>servicios.ServicioPizza</implementation-class>
+    </service>
+    <service name="ServicioUsuario">
+      <implementation-class>servicios.ServicioUsuario</implementation-class>
+    </service>
   </services>
   <clients/>
   <jsr109>false</jsr109>
