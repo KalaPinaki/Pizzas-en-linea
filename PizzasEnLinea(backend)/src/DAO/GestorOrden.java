@@ -52,9 +52,9 @@ public class GestorOrden {
 
         ArrayList<Document> pizzas = new ArrayList<>();
         for (Pizza s : or.getPizzas()) {
-            pizzas.add(new Document("nombre", s.getNombre()).append("precio", s.getPrecio()));
+            pizzas.add(new Document().append("nombre", s.getNombre()).
+                    append("precio", s.getPrecio()));
         }
-
         Document Order = new Document();
         Order.append("ced cliente", or.getCedula()).
                 append("nomb cliente", or.getNombreCompleto()).

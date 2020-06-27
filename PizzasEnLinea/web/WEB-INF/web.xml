@@ -4,9 +4,41 @@
         <servlet-name>ServicioUsuario</servlet-name>
         <servlet-class>servlets.ServicioUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServicioPizza</servlet-name>
+        <servlet-class>servlets.ServicioPizza</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServicioBebidas</servlet-name>
+        <servlet-class>servlets.ServicioBebidas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServicioComplementos</servlet-name>
+        <servlet-class>servlets.ServicioComplementos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServicioExtras</servlet-name>
+        <servlet-class>servlets.ServicioExtras</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServicioUsuario</servlet-name>
         <url-pattern>/ServicioUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioPizza</servlet-name>
+        <url-pattern>/ServicioPizza</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioBebidas</servlet-name>
+        <url-pattern>/ServicioBebidas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioComplementos</servlet-name>
+        <url-pattern>/ServicioComplementos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioExtras</servlet-name>
+        <url-pattern>/ServicioExtras</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
