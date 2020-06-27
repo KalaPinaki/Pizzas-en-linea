@@ -52,10 +52,9 @@ function cargarTablaMenuPizzas(datos) {
                                     (" + ingre + ")\n Precio: " + fila.precio;
 
 
-
             nuevaCelda = nuevaFila.insertCell(-1);
             var select = document.createElement("SELECT");
-            select.setAttribute("id", "tamaño");
+            select.setAttribute("id", "tamaño"+indicePizza);
             nuevaCelda.appendChild(select);
 
             var opcion = document.createElement("option");
@@ -83,15 +82,13 @@ function cargarTablaMenuPizzas(datos) {
             var btn = document.createElement("button");
             btn.className = "btn";
             btn.setAttribute("indicePizza", indicePizza);
-            btn.innerHTML = "<i onclick='AgregaCompra();'>Agregar a carrito</i>";
+            btn.innerHTML = "<i onclick='AgregaPizza();'>Agregar al carrito</i>";
             nuevaCelda.appendChild(btn);
-
-
 
             var fila = {
                 nombreP: fila.nombre,
                 ingredintesP: fila.ingredintes,
-                precioP: fila.precio
+                precioP: fila.precio,
             };
             pizzas.push(fila);
             indicePizza += 1;
@@ -99,44 +96,8 @@ function cargarTablaMenuPizzas(datos) {
     }
 }
 
-//////////////////////////////////////////////////////////////////////////////// BEBIDAS
-function cargaBebidas() {
-    getJSON2('ServicioBebidas', cargarTablaMenuBebidas);
-}
-
-function cargarTablaMenuBebidas(datos) {
-    var refTabla = document.getElementById('tBebidas');
-    if (refTabla) {
-        refTabla.innerHTML = "";
-        datos.Lista_Bebidas.forEach(function (fila, i, arreglo) {
-
-            var nuevaFila = refTabla.insertRow(-1);
-            var nuevaCelda;
-
-            nuevaCelda = nuevaFila.insertCell(-1);
-            nuevaCelda.innerText = fila.nombre + "\n  Precio: " + fila.precio;
-
-            nuevaCelda = nuevaFila.insertCell(-1);
-            var btn = document.createElement("button");
-            btn.className = "btn";
-            btn.setAttribute("indiceBebidas", indiceBebidas);
-            btn.innerHTML = "<i onclick='AgregaCompra();'>Agregar</i>";
-            nuevaCelda.appendChild(btn);
-
-            var btn = document.createElement("button");
-            btn.className = "btn";
-            btn.setAttribute("indiceBebidas", indiceBebidas);
-            btn.innerHTML = "<i onclick='QuitarCompra();'>quitar</i>";
-            nuevaCelda.appendChild(btn);
-
-            var fila = {
-                nombreB: fila.nombre,
-                precioB: fila.precio
-            };
-            bebidas.push(fila);
-            indiceBebidas += 1;
-        });
-    }
+function AgregarPizza(){
+    getJSON2();
 }
 
 //////////////////////////////////////////////////////////////////////////////// Complementos
@@ -161,13 +122,7 @@ function cargarTablaMenuComplementos(datos) {
             var btn = document.createElement("button");
             btn.className = "btn";
             btn.setAttribute("indiceComplemento", indiceComplementos);
-            btn.innerHTML = "<i onclick='AgregaCompra();'>Agregar</i>";
-            nuevaCelda.appendChild(btn);
-
-            var btn = document.createElement("button");
-            btn.className = "btn";
-            btn.setAttribute("indiceComplemento", indiceComplementos);
-            btn.innerHTML = "<i onclick='QuitarCompra();'>quitar</i>";
+            btn.innerHTML = "<i onclick='AgregaComplemento();'>Agregar al carrito</i>";
             nuevaCelda.appendChild(btn);
 
             var fila = {
@@ -179,7 +134,7 @@ function cargarTablaMenuComplementos(datos) {
         });
     }
 }
-//////////////////////////////////////////////////////////////////////////////// extras
+//////////////////////////////////////////////////////////////////////////////// bebidas
 function cargaBebidas() {
     getJSON2('ServicioBebidas', cargarTablaMenuBebidas);
 }
@@ -200,13 +155,7 @@ function cargarTablaMenuBebidas(datos) {
             var btn = document.createElement("button");
             btn.className = "btn";
             btn.setAttribute("indiceBebidas", indiceBebidas);
-            btn.innerHTML = "<i onclick='AgregaCompra();'>Agregar</i>";
-            nuevaCelda.appendChild(btn);
-
-            var btn = document.createElement("button");
-            btn.className = "btn";
-            btn.setAttribute("indiceBebidas", indiceBebidas);
-            btn.innerHTML = "<i onclick='QuitarCompra();'>quitar</i>";
+            btn.innerHTML = "<i onclick='AgregaBebida();'>Agregar al carrito</i>";
             nuevaCelda.appendChild(btn);
 
             var fila = {
@@ -219,7 +168,7 @@ function cargarTablaMenuBebidas(datos) {
     }
 }
 
-//////////////////////////////////////////////////////////////////////////////// Complementos
+//////////////////////////////////////////////////////////////////////////////// Extras
 
 function cargaExtras() {
     getJSON2('ServicioExtras', cargarTablaMenuExtras);
@@ -241,13 +190,7 @@ function cargarTablaMenuExtras(datos) {
             var btn = document.createElement("button");
             btn.className = "btn";
             btn.setAttribute("indiceExtras", indiceExtras);
-            btn.innerHTML = "<i onclick='AgregaCompra();'>Agregar</i>";
-            nuevaCelda.appendChild(btn);
-
-            var btn = document.createElement("button");
-            btn.className = "btn";
-            btn.setAttribute("indiceExtras", indiceExtras);
-            btn.innerHTML = "<i onclick='QuitarCompra();'>quitar</i>";
+            btn.innerHTML = "<i onclick='AgregaExtra();'>Agregar al carrito</i>";
             nuevaCelda.appendChild(btn);
 
             var fila = {
@@ -259,3 +202,4 @@ function cargarTablaMenuExtras(datos) {
         });
     }
 }
+////////////////////////////////////////////////////////////////////////////////  factura

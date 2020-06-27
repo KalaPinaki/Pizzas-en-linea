@@ -53,6 +53,7 @@
                     <h1>EXTRAS</h1>
                     <table class="tablaExtras">
                         <tbody id="tExtras">
+                            
                         </tbody>
                     </table>
                 </section>
