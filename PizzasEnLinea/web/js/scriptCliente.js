@@ -30,7 +30,7 @@ function getJSON2(url, callback) {
 
 //////////////////////////////////////////////////////////////////////////////// PIZZAS
 function cargaPizzas() {
-    getJSON2('ServicioPizza', cargarTablaMenuPizzas);
+    getJSON2('ServicioPizza?opcion=1', cargarTablaMenuPizzas);
 }
 
 function cargarTablaMenuPizzas(datos) {
@@ -125,7 +125,7 @@ function AgregaPizza(fila) {
 //////////////////////////////////////////////////////////////////////////////// Complementos
 
 function cargaComplementos() {
-    getJSON2('ServicioComplementos', cargarTablaMenuComplementos);
+    getJSON2('ServicioComplementos?opcion=1', cargarTablaMenuComplementos);
 }
 
 function cargarTablaMenuComplementos(datos) {
@@ -175,7 +175,7 @@ function AgregaComplemento(fila) {
 
 //////////////////////////////////////////////////////////////////////////////// bebidas
 function cargaBebidas() {
-    getJSON2('ServicioBebidas', cargarTablaMenuBebidas);
+    getJSON2('ServicioBebidas?opcion=1', cargarTablaMenuBebidas);
 }
 
 function cargarTablaMenuBebidas(datos) {
@@ -224,7 +224,7 @@ function AgregaBebida(fila) {
 //////////////////////////////////////////////////////////////////////////////// Extras
 
 function cargaExtras() {
-    getJSON2('ServicioExtras', cargarTablaMenuExtras);
+    getJSON2('ServicioExtras?opcion=1', cargarTablaMenuExtras);
 }
 
 function cargarTablaMenuExtras(datos) {
