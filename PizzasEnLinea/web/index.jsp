@@ -45,7 +45,7 @@
                     <!-- Modal content -->
                     <div class="modal-content">
                         <span class="menuCambiar">&times;</span>
-                        <table>
+                        <table id="tab">
                             <caption> Cambio de contraseña </caption>
                             <tr>
                                 <td>Digite su número de cédula: </td>
@@ -78,7 +78,7 @@
                     <!-- Modal content -->
                     <div class="modal-content">
                         <span class="menuRegistro">&times;</span>
-                        <table>
+                        <table id="tab">
                             <caption> Registrar Usuario </caption>
                             <tr>
                                 <td>Nombre: </td>
