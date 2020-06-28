@@ -73,6 +73,7 @@ function olvidaContraseña() {
 }
 
 function cancelar() {
+    
     span.onclick = function () {
         modal.style.display = "none";
     }

@@ -82,9 +82,10 @@ public class GestorIngredientes implements Serializable {
 
             BasicDBObject filtro = new BasicDBObject();
             filtro.put("nombre", nombre);
-
+            double precio = Double.valueOf(value);
             BasicDBObject campos = new BasicDBObject();
-            campos.append(campo, value);
+            campos.append("nombre", campo);
+            campos.append("precio", precio);
             BasicDBObject updateQuery = new BasicDBObject().append("$set", campos);
             UpdateResult resultTotal = collection.updateOne(filtro, updateQuery);
             if (resultTotal.getMatchedCount() == 0) {
@@ -138,20 +139,21 @@ public class GestorIngredientes implements Serializable {
         return i.toString();
     }
 
-//    public static void main(String[] args) {
-//        GestorIngredientes prueba = getInstance();
-////        System.out.println(prueba.listarIngredientes());
+    public static void main(String[] args) {
+        GestorIngredientes prueba = getInstance();
+//        System.out.println(prueba.listarIngredientes());
 //        System.out.println(prueba.buscarIngrediente("piña"));
 //
 ////        Ingredientes b = new Ingredientes(2000,"zarza");
 ////        prueba.insertIngredientes(b);
 ////        System.out.println(prueba.buscarIngrediente("zarza").toString());
-////        prueba.updateIngrediente("zarza", "precio", String.valueOf(1500));
-////        System.out.println(prueba.buscarIngrediente("zarza").toString());
+        prueba.updateIngrediente("carne de cerdo", "carne de chancho", String.valueOf(1500));
+        System.out.println(prueba.listarIngredientes());
+//        System.out.println(prueba.buscarIngrediente("pepperoni"));
 ////        prueba.deleteIngrediente("zarza");
 ////        System.out.println(prueba.buscarIngrediente("zarza").toString());
 
 //{"precio":200,"_id":"5ef02961ba84d47ba5d34972","nombre":"piña"}
 //{"precio":200.0, "nombre":"piña"}
-//    }
+    }
 }

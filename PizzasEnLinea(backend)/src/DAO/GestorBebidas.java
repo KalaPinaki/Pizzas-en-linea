@@ -72,9 +72,10 @@ public class GestorBebidas implements Serializable{
 
             BasicDBObject filtro = new BasicDBObject();
             filtro.put("nombre", nombre);
-
+            double precio = Double.valueOf(value);
             BasicDBObject campos = new BasicDBObject();
-            campos.append(campo, value);
+            campos.append("nombre", campo);
+            campos.append("precio", precio);
             BasicDBObject updateQuery = new BasicDBObject().append("$set", campos);
             UpdateResult resultTotal = collection.updateOne(filtro, updateQuery);
             if (resultTotal.getMatchedCount() == 0) {

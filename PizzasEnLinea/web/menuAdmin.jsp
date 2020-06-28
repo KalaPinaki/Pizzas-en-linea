@@ -11,69 +11,171 @@
         <meta charset=UTF-8">
         <title>Opciones de administrador</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
         <!-- -->
+        <link href="css/default.css" rel="stylesheet" type="text/css"/>
         <link href="css/styles.css" rel="stylesheet" type="text/css"/>
         <script src="js/responsive-nav.js" type="text/javascript"></script>
         <script src="js/logOutScript.js" type="text/javascript"></script>
-  
+        <script src="js/scriptAdmin.js" type="text/javascript"></script>
     </head>
-    <body>
+    <body onload="cargaInicialAdmin()">
         <div id="wrapper">
             <div id="contents">
+
                 <header>
-
                     <nav class="nav-collapse">
-
                         <ul>
-
                             <li class="menu-item active"><a href="#pizzas" data-scroll>Administrar <br> Pizzas</a></li>
-                            <li class="menu-item"><a href="#extras" data-scroll>Administrar <br> Ingredientes</a></li>
+                            <li class="menu-item"><a href="#extras" data-scroll>Administrar <br> Extras</a></li>
                             <li class="menu-item"><a href="#complementos" data-scroll>Administrar <br> Complementos</a></li>
                             <li class="menu-item"><a href="#bebidas" data-scroll>Administrar <br> Bebidas</a></li>
                             <li class="menu-item"><a href="#carrito" data-scroll>Administrar <br> Ordenes</a></li>
                             <li class="menu-item"><a href="#pagar" data-scroll>Consultar <br> ordenes</a></li>
-                            <li class="salir"><a style="float: right" href="javascript:void(0);" onclick="logOut()">Salir</a></li>
+                            <li class="salir"><a href="javascript:void(0);" onclick="logOut()">Salir</a></li>
                         </ul>
                     </nav>                                                                                  
                 </header> 
-                
-                
-                
-                <section id="pizzas">
-                    <h1>PIZZAS</h1>
-                    <table class="tablaPizzas">
-                        <tbody id="tPizzas">
 
-                        </tbody>
-                    </table>
+
+
+                <section id="pizzas" class="pizzas">
+                    <h1>Pizzas</h1>
+                    <div id="listPizzas"><!-- Carga las pizzas actuales y puede elminarlas-->
+                        <table class="tabla">
+                            <tbody id="tPizzas">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="AgregarPizzas"><!--Agrega Pizzas -->
+                    </div>
+
+
                 </section>
 
-                <section id="extras">
-                    <h1>EXTRAS</h1>
-                    <table class="tablaExtras">
-                        <tbody id="tExtras">
-                        </tbody>
-                    </table>
+
+                <section id="extras" class="extras">
+                    <div id="listarExtras">
+                        <h1>EXTRAS</h1>
+                        <table class="tabla">
+                            <tbody id="tExtras">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="insertExtra" class="insertExtra">
+                        <p><!-- Trigger button to insert Extras-->
+                            <br><button type="button" id="ExtraBtn" onclick="modelExtra(null)">Insertar Extra</button>
+                        </p>
+                    </div>
+                    <div id="agregarExtras" class="modal">
+                        <div class="modal-content-admin">
+                            <span class="ExtraSpan">&times;</span>
+                            <table class="newIngrediente">
+                                <caption> Ingreso de Ingrediente</caption>
+                                <tr>
+                                    <td>Digite el nombre del ingrediente extra: </td>
+                                    <td><input id="nombreE" type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><br>Digite el costo: </td>
+                                    <td><br><input id="precioE" type="number" min="0" ></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right;"><br>
+                                        <button type="button" id="boton" onclick="confirmarGenerico()">Aceptar</button>
+                                    </td>
+                                    <td style="text-align: center;"><br>
+                                        <button type="button" id="boton" onclick="cancelarSpan()">Cancelar</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
                 </section>
+
 
                 <section id="complementos">
-                    <h1>COMPLEMENTOS</h1>
-                    <table class="tablaComplemento">
-                        <tbody id="tComplementos">
-
-                        </tbody>
-                    </table>
+                    <div id="listarComplementos">
+                        <h1>COMPLEMENTOS</h1>
+                        <table class="tabla">
+                            <tbody id="tComplementos">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="insertComplemento" class="insertComplement">
+                        <p><!-- Trigger button to insert Extras-->
+                            <br><button type="button" id="complementBtn" onclick="modelComplement(null)">Insertar Complemento</button>
+                        </p>
+                    </div>
+                    <div id="agregarComplementos" class="modal">
+                        <div class="modal-content-admin">
+                            <span class="ComplementSpan">&times;</span>
+                            <table class="newComplement">
+                                <caption> Ingreso de Complementos</caption>
+                                <tr>
+                                    <td>Digite el nombre del complemento: </td>
+                                    <td><input id="nombreC" type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><br>Digite el precio: </td>
+                                    <td><br><input id="precioC" type="number" min="0" ></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right;"><br>
+                                        <button type="button" id="boton" onclick="confirmarGenericoComplementos()">Aceptar</button>
+                                    </td>
+                                    <td style="text-align: center;"><br>
+                                        <button type="button" id="boton" onclick="cancelarSpan()">Cancelar</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </section>
+
 
                 <section id="bebidas">
-                    <h1>BEBIDAS</h1>
-                    <table class="tablaBebidas">
-                        <tbody id="tBebidas">
-
-                        </tbody>
-                    </table>
+                    <div id="listarBebidas">
+                        <h1>BEBIDAS</h1>
+                        <table class="tabla">
+                            <tbody id="tBebidas"></tbody>
+                        </table>
+                    </div>
+                     <div id="insertDrink" class="insertDrink">
+                        <p><!-- Trigger button to insert Extras-->
+                            <br><button type="button" id="drinkBtn" onclick="modelDrink(null)">Insertar Bebida</button>
+                        </p>
+                    </div>
+                    <div id="agregarBebidas" class="modal">
+                        <div class="modal-content-admin">
+                            <span class="DrinkSpan">&times;</span>
+                            <table class="newDrink">
+                                <caption> Ingreso de Bebida</caption>
+                                <tr>
+                                    <td>Digite el nombre de la bebida </td>
+                                    <td><input id="nombreD" type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td><br>Digite el precio: </td>
+                                    <td><br><input id="precioD" type="number" min="0" ></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right;"><br>
+                                        <button type="button" id="boton" onclick="confirmarGenericoBebidas()">Aceptar</button>
+                                    </td>
+                                    <td style="text-align: center;"><br>
+                                        <button type="button" id="boton" onclick="cancelarSpan()">Cancelar</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </section>
+
+
+
+
 
                 <section id="carrito">
                     <h1>CARRITO</h1>
@@ -87,7 +189,7 @@
                 <script src="js/scroll.js" ></script>
                 <script src="js/fixed-responsive-nav.js" ></script>
 
-                
+
             </div>
         </div>
     </body>

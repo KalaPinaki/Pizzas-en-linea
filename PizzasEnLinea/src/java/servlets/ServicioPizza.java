@@ -22,18 +22,35 @@ import PizzaEnLinea.modelo.pizza.ServicioPizza_Service;
 
 public class ServicioPizza extends HttpServlet {
 
-
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("application/json;charset=UTF-8");
-        
+
         ServicioPizza_Service spi = new ServicioPizza_Service();
         PizzaEnLinea.modelo.pizza.ServicioPizza pi = spi.getServicioPizzaPort();
-        
-        
+
         try (PrintWriter out = response.getWriter()) {
-            String listaPizzas = pi.listarPizzas();
-            out.println(listaPizzas);
+            int opcion = Integer.parseInt(request.getParameter("opcion"));
+            StringBuilder resultado = new StringBuilder();
+            switch (opcion) {
+                case 1: //listar las pizzas
+                    String listaPizzas = pi.listarPizzas();
+                    out.println(listaPizzas);
+                    break;
+                case 2: //eliminar una pizza
+                    String nomPizza = request.getParameter("nomPizza");
+                    if( pi.eliminarPizza(nomPizza).equals("exito!") ){
+                        resultado.append("{\"result\": \"Pizza eliminada correctamente\"}");
+                    }else{
+                        resultado.append("{\"result\": \"Ocurrió un error inseperado\"}");
+                    }
+                    out.println(resultado);
+                    
+                    break;
+                default:
+                    break;
+            }
+
         }
     }
 
