@@ -282,7 +282,7 @@ function cargarTablaMenuBebidas(datos) {
 }
 
 function EliminarBebida() {
-    eliminarBebida(JSON.parse(event.target.parentNode.getAttribute("indiceBebida")));
+    eliminarBebida(JSON.parse(event.target.parentNode.getAttribute("indiceBebidas")));
 }
 
 function eliminarBebida(fila) {

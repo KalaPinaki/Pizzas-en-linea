@@ -20,7 +20,7 @@ function getJSONv2(url, data, callback) {//llama al servidor para guardar la fac
 
 function resultado(datos) {
 
-    if (!datos.result === "funciona") {
+    if (datos.result !== "funciona") {
         alert(datos.result);
     } else {
         if(datos.rol === "true"){
