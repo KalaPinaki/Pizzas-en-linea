@@ -1,5 +1,5 @@
 
-/*
+<%--
 MenuPizzas.jsp
 
 EIF209 - Programación 4 – Proyecto #2
@@ -8,7 +8,7 @@ Junio 2020
 Autores:
 - 116630575 Dafhnne Alfaro
 - 304950273 Leonardo Baldares
-*/
+--%>
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -24,7 +24,7 @@ Autores:
         <script src="js/responsive-nav.js" type="text/javascript"></script>
         <script src="js/scriptCliente.js" type="text/javascript"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
-
+        <script src="js/logOutScript.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -42,7 +42,7 @@ Autores:
                             <li class="menu-item"><a href="#complementos" data-scroll>Complementos</a></li>
                             <li class="menu-item"><a href="#bebidas" data-scroll>Bebidas</a></li>
                             <li class="menu-item"><a href="#carrito" data-scroll>Carrito</a></li>
-                            <!--<li class="salir"><a href="#menuPizzas.jsp" data-scroll>Salir</a></li>-->
+                            <li class="salir"><a href="javascript:void(0);" onclick="logOut()">Salir</a></li>
                         </ul>
                     </nav>                                                                                  
                 </header> 
