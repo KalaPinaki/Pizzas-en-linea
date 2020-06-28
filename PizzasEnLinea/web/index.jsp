@@ -1,7 +1,12 @@
-<%-- 
-    Document   : index
-    Created on : 26/06/2020, 11:24:49 AM
-    Author     : leoba
+<%--
+index.jsp
+
+EIF209 - Programación 4 – Proyecto #2
+Junio 2020
+
+Autores:
+- 116630575 Dafhnne Alfaro
+- 304950273 Leonardo Baldares
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
