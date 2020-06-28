@@ -39,11 +39,12 @@ public class PruebaCliente {
 //        ServicioComplemento_Service sc = new ServicioComplemento_Service();
 //        ServicioComplemento c = sc.getServicioComplementoPort();
 //        System.out.println(c.listComplements() + "\n\n\n");
+        
 //        
-//        
-//        ServicioIngredientes_Service si = new ServicioIngredientes_Service();
-//        ServicioIngredientes i = si.getServicioIngredientesPort();
-//        System.out.println(i.listarIngredientes() + "\n\n\n");
+        ServicioIngredientes_Service si = new ServicioIngredientes_Service();
+        ServicioIngredientes i = si.getServicioIngredientesPort();
+        System.out.println(i.listarIngredientes() + "\n\n\n");
+//        System.out.println(i.buscarIngrediente("tomillo") + "\n\n\n");
 //        
 //        ServicioPago_Service spa = new ServicioPago_Service();
 //        ServicioPago pa = spa.getServicioPagoPort();
@@ -59,18 +60,18 @@ public class PruebaCliente {
 //        System.out.println(pi.listarPizzas() + "\n\n\n");
         
         
-        ServicioOrden_Service so = new ServicioOrden_Service();
-        ServicioOrden o = so.getServicioOrdenPort();
-        System.out.println(o.listOrder() + "\n\n\n");
-        
-        
-        Date fecha = new Date();
-        
-        o.insertOrder("304950273", "Leonardo Baldares Gómez", "5", 
-                "\"pizzas\": [{\"nombre\":\"Suprema\",\"precio\":5000},{\"nombre\":\"Napolitana\",\"precio\":5000}]",
-                "\"extras\": [{\"nombre\":\"Coca-Cola\"}, {\"nombre\":\"Papas Fritas\"}]", fecha.toString(), "0", "contado", "500000");
-        
-        System.out.println(o.listOrder() + "\n\n\n");
+//        ServicioOrden_Service so = new ServicioOrden_Service();
+//        ServicioOrden o = so.getServicioOrdenPort();
+//        System.out.println(o.listOrder() + "\n\n\n");
+//        
+//        
+//        Date fecha = new Date();
+//        
+//        o.insertOrder("304950273", "Leonardo Baldares Gómez", "5", 
+//                "\"pizzas\": [{\"nombre\":\"Suprema\",\"precio\":5000},{\"nombre\":\"Napolitana\",\"precio\":5000}]",
+//                "\"extras\": [{\"nombre\":\"Coca-Cola\"}, {\"nombre\":\"Papas Fritas\"}]", fecha.toString(), "0", "contado", "500000");
+//        
+//        System.out.println(o.listOrder() + "\n\n\n");
         
     }
     

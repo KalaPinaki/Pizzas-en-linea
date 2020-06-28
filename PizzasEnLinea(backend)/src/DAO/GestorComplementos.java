@@ -106,9 +106,10 @@ public class GestorComplementos {
 
             BasicDBObject filtro = new BasicDBObject();//filtro para obtener el numero de factura
             filtro.put("nombre", nombre);
-
+            double precio = Double.valueOf(value);
             BasicDBObject campos = new BasicDBObject();
-            campos.append(campo, value);
+            campos.append("nombre", campo);
+            campos.append("precio", precio);
             //System.out.println(campos);
             //para poder usar el $set
             BasicDBObject updateQuery = new BasicDBObject().append("$set", campos);
