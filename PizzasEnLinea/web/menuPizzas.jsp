@@ -1,8 +1,15 @@
-<%-- 
-    Document   : menuPizzas
-    Created on : 26/06/2020, 11:52:22 AM
-    Author     : leoba
---%>
+
+/*
+MenuPizzas.jsp
+
+EIF209 - Programación 4 – Proyecto #2
+Junio 2020
+
+Autores:
+- 116630575 Dafhnne Alfaro
+- 304950273 Leonardo Baldares
+*/
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -13,9 +20,13 @@
         <title>Menú</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="css/tablas.css" rel="stylesheet" type="text/css"/>
         <script src="js/responsive-nav.js" type="text/javascript"></script>
         <script src="js/scriptCliente.js" type="text/javascript"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     </head>
 
@@ -39,11 +50,14 @@
 
                 <section id="pizzas">
                     <h1>PIZZAS</h1>
+
                     <table class="tablaPizzas">
                         <tbody id="tPizzas">
 
                         </tbody>
                     </table>
+                    <p>&nbsp;</p>
+                    <p style="text-align: center">Nota: El precio de la pizza varia según el tamaño(grande +¢1500, mediana +¢1000, pequeña +¢800)</p>
                 </section>
 
                 <section id="extras">
@@ -57,7 +71,7 @@
 
                 <section id="complementos">
                     <h1>COMPLEMENTOS</h1>
-                    <table class="tablaComplemento">
+                    <table class="tablaComplementos">
                         <tbody id="tComplementos">
 
                         </tbody>
@@ -89,21 +103,25 @@
                         <tbody id="tOrden"></tbody>
                         <tfoot>
                             <tr>
-                                <td>&nbsp;</td>
-                                <td colspan="2" class="c2b">Total general:</td>
+                                <td colspan="3" class="c2b">Total general:</td>
                                 <td id="totalGeneral" class="c2c" />
                                 <td>
-                                    <button type="button" onclick="CancelaCompra()"> Cancelar Compra</button>
+                                    <button type="button" class="fa fa-trash" style="font-size:15px;color:crimson" onclick="CancelaCompra()"> Cancelar</button>
                                 </td>
                             </tr>
                         </tfoot>
                     </table>
-                    <select id="metodo">
-                        <option value="Contado">Contado</option> 
-                        <option value="Tarjeta" >Tarjeta</option>
-                    </select>
-                    <p style="text-align: left;">
-                        <button type="button" id="orden1" onclick="ConfirmaCompra()" value="1">Comprar</button>
+                    <p>&nbsp;</p>
+                    <p style="text-align: center">
+                        <label> Metodo de Pago: </label>
+                        <select id="metodo" style="text-align: left">
+                            <option value="Contado">Contado</option> 
+                            <option value="Tarjeta" >Tarjeta</option>
+                        </select>
+                    </p>
+                    <p>&nbsp;</p>
+                    <p style="text-align: center;">
+                        <button type="button" class="fa fa-money" style="font-size:25px;color:crimson" id="orden1" onclick="ConfirmaCompra()" value="1"> Comprar</button>
                     </p>
                 </section>
 

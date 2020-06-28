@@ -181,3 +181,7 @@ body{
 .newExtraTable, .newComplement, .newPedido, .newDrink, .newIngrediente{
     
 }
+
+#tab {
+    border: 2pt solid black;
+}

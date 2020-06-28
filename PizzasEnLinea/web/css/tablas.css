@@ -1,0 +1,30 @@
+body{
+    background-image: url('../imagenesPizzas/black_denim.png');
+}
+
+.tablaPizzas td, .tablaBebidas td, .tablaComplementos td,
+.tablaExtras td, .tablaOrden td,th{
+    color: white;
+    border: 2pt solid crimson;
+    padding: 10px 10px 10px 10px;
+}
+
+.tablaBebidas, .tablaComplementos,
+.tablaExtras{
+    border: 2pt solid crimson;
+    position: relative;
+    left: 38%;
+}
+
+.tablaPizzas{
+    border: 2pt solid crimson;
+    position: relative;
+    left: 20%;
+}
+
+.tablaOrden{
+    border: 2pt solid crimson;
+    position: relative;
+    left: 25%;
+    
+}

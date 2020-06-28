@@ -78,7 +78,7 @@ function cargarTablaMenuPizzas(datos) {
             var btn = document.createElement("button");
             btn.className = "btn";
             btn.setAttribute("indicePizza", indicePizza);
-            btn.innerHTML = "<i onclick='AgregarPizza();'>Agregar al carrito</i>";
+            btn.innerHTML = "<i class=\"fa fa-cart-plus\" style=\"font-size:15px;color:crimson\" onclick='AgregarPizza();'> Agregar al carrito</i>";
             nuevaCelda.appendChild(btn);
             var fila = {
                 nombreP: fila.nombre,
@@ -142,7 +142,7 @@ function cargarTablaMenuComplementos(datos) {
             var btn = document.createElement("button");
             btn.className = "btn";
             btn.setAttribute("indiceComplemento", indiceComplementos);
-            btn.innerHTML = "<i onclick='AgregarComplemento();'>Agregar al carrito</i>";
+            btn.innerHTML = "<i class=\"fa fa-cart-plus\" style=\"font-size:15px;color:crimson\" onclick='AgregarComplemento();'> Agregar al carrito</i>";
             nuevaCelda.appendChild(btn);
             var fila = {
                 
@@ -192,7 +192,7 @@ function cargarTablaMenuBebidas(datos) {
             var btn = document.createElement("button");
             btn.className = "btn";
             btn.setAttribute("indiceBebidas", indiceBebidas);
-            btn.innerHTML = "<i onclick='AgregarBebida();'>Agregar al carrito</i>";
+            btn.innerHTML = "<i class=\"fa fa-cart-plus\" style=\"font-size:15px;color:crimson\" onclick='AgregarBebida();'> Agregar al carrito</i>";
             nuevaCelda.appendChild(btn);
             var fila = {
                 
@@ -242,7 +242,7 @@ function cargarTablaMenuExtras(datos) {
             var btn = document.createElement("button");
             btn.className = "btn";
             btn.setAttribute("indiceExtras", indiceExtras);
-            btn.innerHTML = "<i onclick='AgregarExtra();'>Agregar al carrito</i>";
+            btn.innerHTML = "<i class=\"fa fa-cart-plus\" style=\"font-size:15px;color:crimson\" onclick='AgregarExtra();'> Agregar al carrito</i>";
             nuevaCelda.appendChild(btn);
             var fila = {
                 
@@ -308,7 +308,7 @@ function AgregarOrden(datosPizzas, datosExtras) {
                 var btn = document.createElement("button");
                 btn.className = "btn";
                 btn.setAttribute("indiceOrden", indiceOrden);
-                btn.innerHTML = "<i onclick='eliminarFila();'>elimina</i>";
+                btn.innerHTML = "<i class=\"fa fa-remove\" style=\"font-size:24px;color:crimson\" onclick='eliminarFila();'></i>";
                 nuevaCelda.appendChild(btn);
 
                 var datosProducto = {
@@ -352,7 +352,7 @@ function AgregarOrden(datosPizzas, datosExtras) {
                 var btn = document.createElement("button");
                 btn.className = "btn";
                 btn.setAttribute("indiceOrden", indiceOrden);
-                btn.innerHTML = "<i onclick='eliminarFila();'>elimina</i>";
+                btn.innerHTML = "<i  class=\"fa fa-remove\" style=\"font-size:24px;color:crimson\" onclick='eliminarFila();'></i>";
                 nuevaCelda.appendChild(btn);
 
                 var datosProducto = {
