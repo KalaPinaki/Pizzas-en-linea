@@ -24,6 +24,10 @@
         <servlet-name>ServicioLogOut</servlet-name>
         <servlet-class>servlets.ServicioLogOut</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServicioConfirmaOrden</servlet-name>
+        <servlet-class>servlets.ServicioConfirmaOrden</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServicioUsuario</servlet-name>
         <url-pattern>/ServicioUsuario</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>ServicioLogOut</servlet-name>
         <url-pattern>/ServicioLogOut</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioConfirmaOrden</servlet-name>
+        <url-pattern>/ServicioConfirmaOrden</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
