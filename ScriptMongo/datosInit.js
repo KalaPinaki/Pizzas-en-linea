@@ -4,7 +4,8 @@ db = conn.getDB("pizzeria");
 db.dropDatabase()
 db.createCollection('usuarios')
 db.usuarios.insert({"nombre": "Georges", "apellidos":"Alfaro Salazar", "cedula": "105710421", "direccion": "San Jose", "contraseña": "admin", "telefono": "89104578","rol": true})
-db.usuarios.insert({"nombre": "Carlos", "apellidos":"Zhou Zheng", "cedula": "504250413" ,"direccion": "Guanacaste", "contraseña": "chinito123", "telefono": "60712317","rol": false})
+db.usuarios.insert({"nombre": "Samanta", "apellidos":"Alfaro Cruz", "cedula": "116630575" ,"direccion": "Heredia", "contraseña": "user123", "telefono": "85535569","rol": false})
+db.usuarios.insert({"nombre": "Leonardo", "apellidos":"Baldares Gomez", "cedula": "304950273" ,"direccion": "Cartago", "contraseña": "user123", "telefono": "86575093","rol": false})
 
 db.createCollection('pizzas')
 db.pizzas.insert({"nombre": "Suprema", "ingredientes":[{"nombre": "pepperoni"}, {"nombre": "carne de res"},{"nombre": "carne de cerdo"},{"nombre": "chile dulce"},{"nombre": "hongos"},{"nombre": "cebolla"}],"precioBase": 2000.0})
@@ -54,6 +55,7 @@ db.metodosPago.insert({"nombre": "Contado"})
 db.metodosPago.insert({"nombre": "Tarjeta"})
 
 
-
+db.createCollection('ordenes')
+db.ordenes.insert({"ced cliente": "304950273", "nomb cliente" : "Leonardo Baldares Gómez", "num orden" : 1, "fecha" : "Sun Jun 28 01:15:06 CST 2020", "pizzas" : [{ "nombre" : "Suprema", "precio" : 2000.0 }, { "nombre" : "Napolitana", "precio" : 2000.0 }], "extras" : [{ "nombre" : "Coca-cola" }], "estado" : 0, "metodo pago" : "contado", "precio" : 20000.0 })
 
 
