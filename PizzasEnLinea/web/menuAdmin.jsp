@@ -13,6 +13,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- -->
         <link href="css/default.css" rel="stylesheet" type="text/css"/>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
         <link href="css/styles.css" rel="stylesheet" type="text/css"/>
         <script src="js/responsive-nav.js" type="text/javascript"></script>
         <script src="js/logOutScript.js" type="text/javascript"></script>
@@ -29,7 +30,7 @@
                             <li class="menu-item"><a href="#extras" data-scroll>Administrar <br> Extras</a></li>
                             <li class="menu-item"><a href="#complementos" data-scroll>Administrar <br> Complementos</a></li>
                             <li class="menu-item"><a href="#bebidas" data-scroll>Administrar <br> Bebidas</a></li>
-                            <li class="menu-item"><a href="#carrito" data-scroll>Administrar <br> Ordenes</a></li>
+                            <li class="menu-item"><a href="#ordenes" data-scroll>Administrar <br> Ordenes</a></li>
                             <li class="menu-item"><a href="#pagar" data-scroll>Consultar <br> ordenes</a></li>
                             <li class="salir"><a href="javascript:void(0);" onclick="logOut()">Salir</a></li>
                         </ul>
@@ -43,7 +44,6 @@
                     <div id="listPizzas"><!-- Carga las pizzas actuales y puede elminarlas-->
                         <table class="tabla">
                             <tbody id="tPizzas">
-
                             </tbody>
                         </table>
                     </div>
@@ -142,7 +142,7 @@
                             <tbody id="tBebidas"></tbody>
                         </table>
                     </div>
-                     <div id="insertDrink" class="insertDrink">
+                    <div id="insertDrink" class="insertDrink">
                         <p><!-- Trigger button to insert Extras-->
                             <br><button type="button" id="drinkBtn" onclick="modelDrink(null)">Insertar Bebida</button>
                         </p>
@@ -174,12 +174,55 @@
                 </section>
 
 
-
-
-
-                <section id="carrito">
-                    <h1>CARRITO</h1>
+                <section id="ordenes">
+                    <div id="listarPedidos">
+                        <h1>PEDIDOS</h1>
+                        <table class="tablaPedidos">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px;">#Orden</th>
+                                    <th style="width: 20px;">ID Cliente</th>
+                                    <th style="width: 60px;">Nombre Cliente</th>
+                                    <th style="width: 60px;">Estado</th>
+                                    <th style="width: 30px;">Extras</th>
+                                    <th style="width: 30px;">Pizzas</th>
+                                    <th style="width: 30px;">Fecha</th>
+                                    <th style="width: 30px;">Metodo Pago</th>
+                                    <th style="width: 30px;">Total</th>
+                                    <th style="width: 30px;">Actualizar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tPedidos"></tbody>
+                        </table>
+                    </div>
+                    <div id="updateOrden" class="modal">
+                        <div class="modal-content-admin">
+                            <span class="PedidosSpan">&times;</span>
+                            <table class="newPedido">
+                                <caption> Datos del pedido</caption>
+                                <tr>
+                                    <td><br>Digite el estado del pedido </td>
+                                    <td>
+                                        <select id="estadoP">
+                                            <option value="0">En proceso</option>
+                                            <option value="1">En ruta</option>
+                                            <option value="2">Entregado</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right;"><br>
+                                        <button type="button" id="boton" onclick="confirmarEstadoOrden()">Aceptar</button>
+                                    </td>
+                                    <td style="text-align: center;"><br>
+                                        <button type="button" id="boton" onclick="cancelarSpan()">Cancelar</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </section>
+
 
                 <section id="pagar">
                     <h1>PAGAR</h1>

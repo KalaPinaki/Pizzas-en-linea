@@ -87,7 +87,8 @@ body{
 .menuRegistro, 
 .ExtraSpan, 
 .ComplementSpan,
-.DrinkSpan{
+.DrinkSpan
+.PedidosSpan{
     color: #aaaaaa;
     float: right;
     font-size: 28px;
@@ -103,7 +104,9 @@ body{
 .ComplementSpan:hover,
 .ComplementSpan:focus,
 .DrinkSpan:hover,
-.DrinkSpan:focus{
+.DrinkSpan:focus,
+.PedidosSpan:hover,
+.PedidosSpan:focus{
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -133,7 +136,35 @@ body{
 .tabla th {
   background-color: #4CAF50;
   color: white;
+  text-align: center;
 }
+
+/*tabla pedidos*/
+.tablaPedidos{
+    background-color: rgba(0,0,0,0.2);
+    border: 1px solid black;
+    position: absolute;
+    left: 2%; 
+    border-collapse: collapse;
+}
+.tablaPedidos td, th{
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+.tablaPedidos tr:nth-child(even){
+    background-color: #f2f2f2
+}
+
+.tablaPedidos th {
+  background-color: crimson;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+
 
 
 /*division donde está el boton de insertar*/
@@ -147,6 +178,6 @@ body{
 }
 
 /*tabla de agregar (en modal)*/
-.newExtraTable, .newComplement{
+.newExtraTable, .newComplement, .newPedido, .newDrink, .newIngrediente{
     
 }

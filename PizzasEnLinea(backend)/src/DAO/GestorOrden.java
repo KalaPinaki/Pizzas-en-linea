@@ -5,6 +5,7 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.util.JSON;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,6 +13,7 @@ import modelo.Ingredientes;
 import modelo.Pizza;
 import modelo.orden;
 import org.bson.Document;
+import org.json.JSONObject;
 
 public class GestorOrden {
 
@@ -154,26 +156,24 @@ public class GestorOrden {
 
 //    public static void main(String[] args) {
 //        GestorOrden prueba = getInstance();
-////        GestorPizzas pizza = GestorPizzas.getInstance();
-////        GestorBebidas extra = GestorBebidas.getInstance();
-////        ArrayList<Pizza> pizzas = new ArrayList<Pizza>();
-////        ArrayList<String> extras = new ArrayList<String>();
-////
-////        pizzas.add(pizza.buscarPizza("Suprema"));
-//////        pizzas.add(pizza.buscarPizza("Napolitana"));
-////
-////        System.out.println(pizzas.toString());
-////
-////        extras.add(extra.getDrink("Coca-cola").getNombre());
-//////
-////        System.out.println(extras.toString());
-////        orden u = new orden("304950273", "Leonardo Baldares Gómez", 0, pizzas, extras, new Date(), 0, "contado", 20000);
-////        prueba.insertOrder(u);
+//        GestorPizzas pizza = GestorPizzas.getInstance();
+//        GestorBebidas extra = GestorBebidas.getInstance();
+//        ArrayList<Pizza> pizzas = new ArrayList<Pizza>();
+//        ArrayList<String> extras = new ArrayList<String>();
+//        
+//        JSONObject pizzasAux1 = new JSONObject(pizza.buscarPizza("Suprema"));
+//        JSONObject pizzasAux2 = new JSONObject(pizza.buscarPizza("Napolitana"));
+//        JSONObject extrasAux1 = new JSONObject(extra.getDrink("Coca-cola"));
+//        pizzas.add(new Pizza(pizzasAux1.getString("Nombre"),pizzasAux1.getDouble("Precio"), null ));
+//        pizzas.add(new Pizza(pizzasAux2.getString("Nombre"),pizzasAux2.getDouble("Precio"), null ));
+//        extras.add(extrasAux1.getString("nombre"));
+//        orden u = new orden("304950273", "Leonardo Baldares Gómez", 0, pizzas, extras, new Date(), 0, "contado", 20000);
+//        prueba.insertOrder(u);
 ////        orden u2 = new orden("111111111", "Leonardo", 0, pizzas, extras, new Date(), 0, "contado", 20000);
 ////        prueba.insertOrder(u2);
 //        System.out.println(prueba.listOrder());
-////        System.out.println(prueba.getOrder(1));
-//////        prueba.updateEstado(1, 3);
-//////        System.out.println(prueba.getOrder(1).toString());
+//        System.out.println(prueba.getOrder(1));
+//        prueba.updateEstado(1, 3);
+//        System.out.println(prueba.getOrder(1).toString());
 //    }
 }

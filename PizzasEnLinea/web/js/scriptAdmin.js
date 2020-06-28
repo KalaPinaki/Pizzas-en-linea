@@ -2,11 +2,13 @@ var pizzas = [];
 var bebidas = [];
 var complementos = [];
 var extras = [];
+var pedidos = [];
 
 var indiceExtras = -1;
 var indiceComplementos = -1;
 var indicePizza = 0;
 var indiceBebidas = -1;
+var indicePedidos = 0;
 
 
 function cargaInicialAdmin() {
@@ -14,6 +16,7 @@ function cargaInicialAdmin() {
     cargaBebidas();
     cargaComplementos();
     cargaExtras();
+    cargaPedidos();
 }
 
 function reload() {
@@ -135,7 +138,7 @@ function cargarTablaMenuComplementos(datos) {
             btn.setAttribute("indiceComplemento", indice);
             btn.innerHTML = "<i onclick='EliminarComplemento();'>Eliminar Complemento</i>";
             nuevaCelda.appendChild(btn);
-            
+
             //boton para actualizar ese complemento
             nuevaCelda = nuevaFila.insertCell(-1);
             var btn = document.createElement("button");
@@ -144,14 +147,14 @@ function cargarTablaMenuComplementos(datos) {
             btn.setAttribute("indiceComplemento", indice);
             btn.innerHTML = "<i onclick='ActualizarComplemento();'>Actualizar Complemento</i>";
             nuevaCelda.appendChild(btn);
-            
+
 
             var fila = {
                 nombreB: fila.nombre,
                 precioB: fila.precio
             };
             complementos.push(fila);
-            
+
 //            indiceComplementos += 1;
         });
     }
@@ -258,7 +261,7 @@ function cargarTablaMenuBebidas(datos) {
             btn.setAttribute("indiceBebidas", indice);
             btn.innerHTML = "<i onclick='EliminarBebida();'>Eliminar Bebida</i>";
             nuevaCelda.appendChild(btn);
-            
+
             //boton para actualizar esa bebida
             nuevaCelda = nuevaFila.insertCell(-1);
             var btn = document.createElement("button");
@@ -267,7 +270,7 @@ function cargarTablaMenuBebidas(datos) {
             btn.setAttribute("indiceBebida", indice);
             btn.innerHTML = "<i onclick='ActualizarBebidas();'>Actualizar Bebida</i>";
             nuevaCelda.appendChild(btn);
-            
+
             var fila = {
                 nombreD: fila.nombre,
                 precioD: fila.precio
@@ -358,6 +361,7 @@ function confirmarGenericoBebidas() {
 }
 
 //////////////////////////////////////////////////////////////////////////////// Extras
+
 
 function cargaExtras() {
     getJSON2('ServicioExtras?opcion=1', cargarTablaMenuExtras);
@@ -483,14 +487,141 @@ function confirmarGenerico() {
 
 ////////////////////////////////////////////////////////////////////////////////  factura
 
+function cargaPedidos() {
+    getJSON2('ServicioConfirmaOrden?opcion=2', cargarTablaPedidos);
+}
 
 
+function cargarTablaPedidos(datos) {
+    console.log(datos);
+    var refTabla = document.getElementById('tPedidos');
+    if (refTabla) {
+        refTabla.innerHTML = "";
+        datos.Lista_Ordenes.forEach(function (fila, i, arreglo) {
+            var indice = refTabla.rows.length;//calcula cuantas filas que hay ahorita en la tabla...para identificar cada item de la tabla
+            var nuevaFila = refTabla.insertRow(-1);
+            var nuevaCelda;
+            nuevaCelda = nuevaFila.insertCell(-1);
+            nuevaCelda.innerText = fila["num orden"];
+            nuevaCelda = nuevaFila.insertCell(-1);
+            nuevaCelda.innerText = fila["ced cliente"];
+            nuevaCelda = nuevaFila.insertCell(-1);
+            nuevaCelda.innerText = fila["nomb cliente"];
+            nuevaCelda = nuevaFila.insertCell(-1);
+            if (fila.estado === 0) {//En proceso
+                nuevaCelda.innerText = "En proceso";
+            } else if (fila.estado === 1) {
+                nuevaCelda.innerText = "En ruta";
+            } else {//2. entregado
+                nuevaCelda.innerText = "Entregado";
+            }
 
+            //obtener las extras
+            var extras = "";
+            fila.extras.forEach(function (ext, i, arreglo) {
+                extras += ext.nombre + ", ";
+            });
+            nuevaCelda = nuevaFila.insertCell(-1);
+            nuevaCelda.innerText = extras;
 
+            var pizzas = "";
+            fila.pizzas.forEach(function (piz, i, arreglo) {
+                pizzas += piz.nombre + ", " + formatoMoneda(piz.precio) + "\n";
+            });
+            nuevaCelda = nuevaFila.insertCell(-1);
+            nuevaCelda.innerText = pizzas;
 
-//no funciona.... -.-
-function cancelarSpan() { 
+            nuevaCelda = nuevaFila.insertCell(-1);
+            nuevaCelda.innerText = fila["fecha"];
+            nuevaCelda = nuevaFila.insertCell(-1);
+            nuevaCelda.innerText = fila["metodo pago"];
+            nuevaCelda = nuevaFila.insertCell(-1);
+            nuevaCelda.innerText = formatoMoneda(fila["precio"]);
+
+            nuevaCelda = nuevaFila.insertCell(-1);
+            var btn = document.createElement("button");
+            btn.className = "btn";
+            btn.setAttribute("indiceOrden", indice);
+            btn.setAttribute("id", "actualizarOrden" + indice);
+            btn.innerHTML = "<i onclick='ActualizarOrden();'>Actualizar Orden</i>";
+            nuevaCelda.appendChild(btn);
+
+            var fila = {
+                numOrden: fila["num orden"],
+                cedula: fila["ced cliente"],
+                indice: indice,
+                estado: fila.estado
+            };
+
+            pedidos.push(fila);
+        });
+    }
+}
+
+function ActualizarOrden() {
+    actualizarOrden(JSON.parse(event.target.parentNode.getAttribute("indiceOrden")));
+}
+
+function actualizarOrden(fila) {
+    console.log("Actualizando fila: " + fila);
+    var refTabla = document.getElementById("tPedidos");
+    if (refTabla) {
+        var estado = pedidos[fila].estado;
+        document.getElementById("estadoP").setAttribute("value", estado);
+        indicePedidos = fila;
+        modelActPedido("actualizarOrden" + fila);
+    }
+}
+
+function modelActPedido(botonTrigger) {
+    var modal = document.getElementById("updateOrden");
+    var btn = document.getElementById(botonTrigger);//noombre del boton trigger
+    var span = document.getElementsByClassName("PedidosSpan")[0]; //span class
+
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
     span.onclick = function () {
         modal.style.display = "none";
     }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            //limpiar los inputs
+            document.getElementById("estadoP").setAttribute("value", "0");
+        }
+    }
+}
+
+
+function confirmarEstadoOrden() {
+    var data = new FormData();
+    var num = pedidos[indicePedidos].numOrden;
+    var estado = document.getElementById('estadoP').value;
+    data.append("numOrden", num);
+    data.append("estado", estado);
+    //si actualiza o inserta
+    indicePedidos = 0;
+    getJSONv2('ServicioConfirmaOrden?opcion=3', data, mostrarMensajesCRUD);
+
+}
+
+
+////////////////////////////////////////////////////////////////////////////////    Otras
+
+//no funciona.... -.-
+function cancelarSpan() {
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+}
+
+function formatoMoneda(valor) {
+
+    // https://www.fileformat.info/info/unicode/char/20a1/index.htm
+    // 20A1(16) = 8353(10)
+
+    return String.fromCharCode(8353) + numeral(valor).format(" 0,0.00");
 }

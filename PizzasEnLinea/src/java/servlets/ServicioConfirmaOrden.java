@@ -74,6 +74,16 @@ public class ServicioConfirmaOrden extends HttpServlet {
                         out.println(resultado);
                     }
                     break;
+                case 2: // listar las ordenes
+                    out.println(o.listOrder());
+                    break;
+                case 3: // actualizar el estado de una orden
+                    int num = Integer.valueOf(request.getParameter("numOrden"));
+                    int estado = Integer.valueOf(request.getParameter("estado"));
+                    o.updateEstado(num, estado);
+                    resultado.append("{\"result\": \"Exito\"}");
+                    out.println(resultado);
+                    break;
                 default:
                     break;
             }
