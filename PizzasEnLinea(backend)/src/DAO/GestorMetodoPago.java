@@ -1,8 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+    GestorMetodoPago.java
+
+    EIF209 - Programación 4 – Proyecto #2
+    Junio 2020
+
+    Autores:
+    - 116630575 Dafhnne Alfaro
+    - 304950273 Leonardo Baldares
+*/
 package DAO;
 
 import com.mongodb.client.FindIterable;
@@ -15,10 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 import org.bson.Document;
 
-/**
- *
- * @author Samanta
- */
 public class GestorMetodoPago implements Serializable {
 
     private static GestorMetodoPago instancia = null;//para singleton

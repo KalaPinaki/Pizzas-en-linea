@@ -7,10 +7,16 @@ package modelo;
 
 import java.io.Serializable;
 
-/**
- *
- * @author Samanta
- */
+/*
+    Ingredientes.java
+
+    EIF209 - Programación 4 – Proyecto #2
+    Junio 2020
+
+    Autores:
+    - 116630575 Dafhnne Alfaro
+    - 304950273 Leonardo Baldares
+*/
 public class Ingredientes implements Serializable {
 
     private double precio;

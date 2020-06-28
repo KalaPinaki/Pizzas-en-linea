@@ -1,3 +1,13 @@
+/*
+    GestorComplementos.java
+
+    EIF209 - Programación 4 – Proyecto #2
+    Junio 2020
+
+    Autores:
+    - 116630575 Dafhnne Alfaro
+    - 304950273 Leonardo Baldares
+*/
 package DAO;
 
 import com.mongodb.BasicDBObject;

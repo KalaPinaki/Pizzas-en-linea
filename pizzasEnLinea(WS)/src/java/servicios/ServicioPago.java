@@ -1,18 +1,20 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+    servicioPago.java
+
+    EIF209 - Programación 4 – Proyecto #2
+    Junio 2020
+
+    Autores:
+    - 116630575 Dafhnne Alfaro
+    - 304950273 Leonardo Baldares
+*/
 package servicios;
 
 import DAO.GestorMetodoPago;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 
-/**
- *
- * @author leoba
- */
+
 @WebService(serviceName = "ServicioPago")
 public class ServicioPago {
 

@@ -30,7 +30,7 @@ function getJSON2(url, callback) {
 
 //////////////////////////////////////////////////////////////////////////////// PIZZAS
 function cargaPizzas() {
-    getJSON2('ServicioPizza', cargarTablaMenuPizzas);
+    getJSON2('ServicioPizza?opcion=1', cargarTablaMenuPizzas);
 }
 
 function cargarTablaMenuPizzas(datos) {
@@ -96,14 +96,15 @@ function AgregarPizza() {
 }
 
 function AgregaPizza(fila) {
-    
+
     var Pizza = {
+        indice: indicePizza,
         nombre: pizzas[fila].nombreP,
         ingrediantes: pizzas[fila].ingredientesP,
         precio: pizzas[fila].precioP,
         tamaño: document.getElementById("tamaño" + fila).value
     }
-    
+
     if (Pizza.tamaño === "Grande") {
         Pizza.precio += 1500;
     }
@@ -113,7 +114,7 @@ function AgregaPizza(fila) {
     if (Pizza.tamaño === "Pequeña") {
         Pizza.precio += 800;
     }
-    
+
     pizzasOrden.push(Pizza);
 
     AgregarOrden(pizzasOrden, extrasOrden);
@@ -124,7 +125,7 @@ function AgregaPizza(fila) {
 //////////////////////////////////////////////////////////////////////////////// Complementos
 
 function cargaComplementos() {
-    getJSON2('ServicioComplementos', cargarTablaMenuComplementos);
+    getJSON2('ServicioComplementos?opcion=1', cargarTablaMenuComplementos);
 }
 
 function cargarTablaMenuComplementos(datos) {
@@ -144,6 +145,7 @@ function cargarTablaMenuComplementos(datos) {
             btn.innerHTML = "<i onclick='AgregarComplemento();'>Agregar al carrito</i>";
             nuevaCelda.appendChild(btn);
             var fila = {
+                
                 nombreC: fila.nombre,
                 precioC: fila.precio
             };
@@ -159,6 +161,7 @@ function AgregarComplemento() {
 
 function AgregaComplemento(fila) {
     var Complemento = {
+        tipo: 'Complemento',
         nombre: complementos[fila].nombreC,
         precio: complementos[fila].precioC
     }
@@ -172,7 +175,7 @@ function AgregaComplemento(fila) {
 
 //////////////////////////////////////////////////////////////////////////////// bebidas
 function cargaBebidas() {
-    getJSON2('ServicioBebidas', cargarTablaMenuBebidas);
+    getJSON2('ServicioBebidas?opcion=1', cargarTablaMenuBebidas);
 }
 
 function cargarTablaMenuBebidas(datos) {
@@ -192,6 +195,7 @@ function cargarTablaMenuBebidas(datos) {
             btn.innerHTML = "<i onclick='AgregarBebida();'>Agregar al carrito</i>";
             nuevaCelda.appendChild(btn);
             var fila = {
+                
                 nombreB: fila.nombre,
                 precioB: fila.precio
             };
@@ -208,6 +212,7 @@ function AgregarBebida() {
 
 function AgregaBebida(fila) {
     var Bebida = {
+        tipo: 'Bebida',
         nombre: bebidas[fila].nombreB,
         precio: bebidas[fila].precioB
     }
@@ -219,7 +224,7 @@ function AgregaBebida(fila) {
 //////////////////////////////////////////////////////////////////////////////// Extras
 
 function cargaExtras() {
-    getJSON2('ServicioExtras', cargarTablaMenuExtras);
+    getJSON2('ServicioExtras?opcion=1', cargarTablaMenuExtras);
 }
 
 function cargarTablaMenuExtras(datos) {
@@ -240,6 +245,7 @@ function cargarTablaMenuExtras(datos) {
             btn.innerHTML = "<i onclick='AgregarExtra();'>Agregar al carrito</i>";
             nuevaCelda.appendChild(btn);
             var fila = {
+                
                 nombreE: fila.nombre,
                 precioE: fila.precio
             };
@@ -255,6 +261,7 @@ function AgregarExtra() {
 
 function AgregaExtra(fila) {
     var Extra = {
+        tipo: 'Extra',
         nombre: extras[fila].nombreE,
         precio: extras[fila].precioE
     }
@@ -374,8 +381,8 @@ function ConfirmaCompra() {
     var metodo = document.getElementById("metodo");
 
     getJSON2('ServicioConfirmaOrden?orden=' + JSON.stringify(Ordenes) +
-            '&total=' + total +"&opcion=" + opcion.value + "&metodo=" +
-            metodo.value,mensajeCompra);
+            '&total=' + total + "&opcion=" + opcion.value + "&metodo=" +
+            metodo.value, mensajeCompra);
 }
 
 function mensajeCompra(datos) {
@@ -432,11 +439,24 @@ function eliminar(fila) {
 
     var refTabla = document.getElementById("tOrden");
     if (refTabla) {
+        
+        for(i=0; i<pizzasOrden.length; i++){
+           if(pizzasOrden[i].nombre === Ordenes[fila].nombre){
+               pizzasOrden.splice(i, 1);
+           }
+       }
+       for(i=0; i<extrasOrden.length; i++){
+           if(extrasOrden[i].nombre === Ordenes[fila].nombre){
+               extrasOrden.splice(i, 1);
+           }
+       }
+       
         Ordenes.splice(fila, 1);
         refTabla.deleteRow(fila);
 
         for (var i = fila; i < refTabla.rows.length; i++) {
             var refFila = refTabla.rows[i];
+
 
             Ordenes[i].indice = i;
             var campo = refFila.getElementsByTagName("input")[0];
