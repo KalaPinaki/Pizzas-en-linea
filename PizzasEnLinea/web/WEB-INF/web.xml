@@ -21,6 +21,10 @@
         <servlet-class>servlets.ServicioExtras</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>ServicioLogOut</servlet-name>
+        <servlet-class>servlets.ServicioLogOut</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ServicioConfirmaOrden</servlet-name>
         <servlet-class>servlets.ServicioConfirmaOrden</servlet-class>
     </servlet>
@@ -43,6 +47,10 @@
     <servlet-mapping>
         <servlet-name>ServicioExtras</servlet-name>
         <url-pattern>/ServicioExtras</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioLogOut</servlet-name>
+        <url-pattern>/ServicioLogOut</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ServicioConfirmaOrden</servlet-name>
