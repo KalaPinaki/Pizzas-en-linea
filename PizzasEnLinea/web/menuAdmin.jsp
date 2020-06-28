@@ -30,12 +30,11 @@ Autores:
                 <header>
                     <nav class="nav-collapse">
                         <ul>
-                            <li class="menu-item active"><a href="#pizzas" data-scroll>Administrar <br> Pizzas</a></li>
-                            <li class="menu-item"><a href="#extras" data-scroll>Administrar <br> Extras</a></li>
-                            <li class="menu-item"><a href="#complementos" data-scroll>Administrar <br> Complementos</a></li>
-                            <li class="menu-item"><a href="#bebidas" data-scroll>Administrar <br> Bebidas</a></li>
-                            <li class="menu-item"><a href="#ordenes" data-scroll>Administrar <br> Ordenes</a></li>
-                            <li class="menu-item"><a href="#pagar" data-scroll>Consultar <br> ordenes</a></li>
+                            <li class="menu-item active"><a href="#pizzasA" data-scroll>Administrar <br> Pizzas</a></li>
+                            <li class="menu-item"><a href="#extrasA" data-scroll>Administrar <br> Extras</a></li>
+                            <li class="menu-item"><a href="#complementosA" data-scroll>Administrar <br> Complementos</a></li>
+                            <li class="menu-item"><a href="#bebidasA" data-scroll>Administrar <br> Bebidas</a></li>
+                            <li class="menu-item"><a href="#ordenesA" data-scroll>Administrar <br> Ordenes</a></li>
                             <li class="salir"><a href="javascript:void(0);" onclick="logOut()">Salir</a></li>
                         </ul>
                     </nav>                                                                                  
@@ -43,7 +42,7 @@ Autores:
 
 
 
-                <section id="pizzas" class="pizzas">
+                <section id="pizzasA" class="pizzas">
                     <h1>Pizzas</h1>
                     <div id="listPizzas"><!-- Carga las pizzas actuales y puede elminarlas-->
                         <table class="tabla">
@@ -58,7 +57,7 @@ Autores:
                 </section>
 
 
-                <section id="extras" class="extras">
+                <section id="extrasA" class="extras">
                     <div id="listarExtras">
                         <h1>EXTRAS</h1>
                         <table class="tabla">
@@ -99,7 +98,7 @@ Autores:
                 </section>
 
 
-                <section id="complementos">
+                <section id="complementosA">
                     <div id="listarComplementos">
                         <h1>COMPLEMENTOS</h1>
                         <table class="tabla">
@@ -139,7 +138,7 @@ Autores:
                 </section>
 
 
-                <section id="bebidas">
+                <section id="bebidasA">
                     <div id="listarBebidas">
                         <h1>BEBIDAS</h1>
                         <table class="tabla">
@@ -178,7 +177,7 @@ Autores:
                 </section>
 
 
-                <section id="ordenes">
+                <section id="ordenesA">
                     <div id="listarPedidos">
                         <h1>PEDIDOS</h1>
                         <table class="tablaPedidos">
@@ -225,11 +224,6 @@ Autores:
                             </table>
                         </div>
                     </div>
-                </section>
-
-
-                <section id="pagar">
-                    <h1>PAGAR</h1>
                 </section>
 
                 <script src="js/fastclick.js" ></script>
